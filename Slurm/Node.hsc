@@ -11,6 +11,7 @@ module Slurm.Node
   , nodeStateMaint
   , nodeStateReboot
   , nodeStateRes
+  , nodeStatePowerSave
   , NodeInfo(..)
   , unknownNodeInfo
   , slurmLoadNodes
@@ -46,7 +47,8 @@ newtype NodeState = NodeState Word32
   NODE_STATE_RES,       \
   NODE_STATE_DRAIN,     \
   NODE_STATE_MAINT,     \
-  NODE_STATE_REBOOT
+  NODE_STATE_REBOOT,    \
+  NODE_STATE_POWER_SAVE
 
 -- sort of a hacky, assymetric, broken "equals"
 instance Eq NodeState where
